@@ -2,6 +2,12 @@
 
 ## Descripcion
 Este programa en Python verifica archivos de texto en un directorio en busca de archivos que cumplan ciertas condiciones de comparación con un archivo de entrada. Las condiciones incluyen la igualdad de contenido al principio y un formato específico en el contenido restante. El programa calcula el resumen SHA-256 de los archivos y muestra los archivos que cumplen las condiciones, ordenados por el número de ceros iniciales en su resumen SHA-256. Si no se encuentran archivos que cumplan las condiciones, el programa informa que no se encontraron coincidencias.
+### Condiciones
+El programa verifica los archivos de texto en el directorio en busca de aquellos que cumplan las siguientes condiciones:
+1. **Igualdad de Contenido Inicial**: Compara el contenido del archivo de entrada con el contenido del archivo de texto bajo examen. Para que un archivo sea considerado, el contenido del segundo archivo debe comenzar exactamente igual al del primero.
+2. **Formato Específico**: Luego de verificar la igualdad del contenido inicial, el programa examina el contenido restante del segundo archivo. Espera que este contenido tenga un formato específico, que consiste en una cadena de texto que comienza con un valor hexadecimal de 8 caracteres, seguido de una pestaña, otro valor hexadecimal de 2 caracteres y un 100. En otras palabras, se espera que el contenido siga el patrón xxxxxxxx\tyy\t100, donde 'x' y 'y' son dígitos hexadecimales.
+
+Si un archivo cumple con ambas condiciones mencionadas anteriormente, se considera que cumple con las condiciones requeridas y se incluye en la lista de archivos que se mostrarán como resultado. La lista se ordena en función del número de ceros iniciales en el resumen SHA-256 del archivo.
 ## Descargar
 - Puede copiar el archivo '.py' y crear uno nuevo con el nombre que quieras (Te aconsejo que sigas con el mismo de este repositorio para poder seguir los siguientes pasos) con el sufijo '.py'
 ## Requisitos
@@ -22,7 +28,6 @@ Ejemplo:
 ```
 El otro metodo, seria cambiar py por python3.
 
-# SGSSI-LAB-06
 
 # Copyright (c) 2023 Carlos Diez
 
