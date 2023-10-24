@@ -1,4 +1,7 @@
 # SGSSI-LAB-06
+
+## Descripcion
+Este programa en Python verifica archivos de texto en un directorio en busca de archivos que cumplan ciertas condiciones de comparación con un archivo de entrada. Las condiciones incluyen la igualdad de contenido al principio y un formato específico en el contenido restante. El programa calcula el resumen SHA-256 de los archivos y muestra los archivos que cumplen las condiciones, ordenados por el número de ceros iniciales en su resumen SHA-256. Si no se encuentran archivos que cumplan las condiciones, el programa informa que no se encontraron coincidencias.
 ## Descargar
 - Puede copiar el archivo '.py' y crear uno nuevo con el nombre que quieras (Te aconsejo que sigas con el mismo de este repositorio para poder seguir los siguientes pasos) con el sufijo '.py'
 ## Requisitos
