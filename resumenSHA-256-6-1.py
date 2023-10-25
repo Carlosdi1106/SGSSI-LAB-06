@@ -22,8 +22,6 @@ def comprobar_archivos(archivo1, archivo2):
 
             lineas1 = contenido1.split('\n')
             lineas2 = contenido2.split('\n')
-
-            # Verificar si archivo2 tiene una línea más que archivo1
             if len(lineas2) == len(lineas1):
 
                 if contenido2.startswith(contenido1):
@@ -31,8 +29,12 @@ def comprobar_archivos(archivo1, archivo2):
 
                     if sha256_summary.startswith('00'):
                         remaining_content = contenido2[len(contenido1):]
-                        expected_format = r"^[0-9A-Fa-f]{8}\t[0-9A-Fa-f]{2}\t100$"
-                        if re.match(expected_format, remaining_content):
+                        expected_format_1 = r"^[0-9a-f]{8}\t[0-9a-f]{2}\t100$"
+                        expected_format_2 = r"^[0-9a-f]{8}[ ]+[0-9a-f]{2}[ ]+100$"
+                        if re.match(expected_format_1, remaining_content):
+                            prefix_zeros = len(re.match(r"^0+", sha256_summary).group())
+                            return True, prefix_zeros
+                        if re.match(expected_format_2, remaining_content):
                             prefix_zeros = len(re.match(r"^0+", sha256_summary).group())
                             return True, prefix_zeros
 
